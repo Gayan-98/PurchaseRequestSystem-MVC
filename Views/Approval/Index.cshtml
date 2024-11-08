@@ -1,0 +1,40 @@
+@model IEnumerable<PurchaseRequest>
+
+<div class="container">
+    <h2>Purchase Request Approval</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Request Number</th>
+                <th>Requester</th>
+                <th>Item Code</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model)
+            {
+                <tr>
+                    <td>@request.RequestNumber</td>
+                    <td>@request.User.Username</td>
+                    <td>@request.ItemCode</td>
+                    <td>@request.ItemQuantity</td>
+                    <td>@request.ItemCost</td>
+                    <td>@request.TotalCost</td>
+                    <td>
+                        <form method="post" asp-action="UpdateStatus" style="display: inline">
+                            <input type="hidden" name="id" value="@request.Id" />
+                            <button type="submit" name="status" value="APPROVED" 
+                                    class="btn btn-success btn-sm">Approve</button>
+                            <button type="submit" name="status" value="DISAPPROVED" 
+                                    class="btn btn-danger btn-sm">Disapprove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

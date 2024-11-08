@@ -1,0 +1,53 @@
+@model IEnumerable<PurchaseRequest>
+
+<div class="container">
+    <h2>Purchase Request Form</h2>
+    <form method="post" asp-action="Create" id="purchaseForm">
+        <div class="form-group">
+            <label for="ItemCode">Item Code:</label>
+            <input type="text" id="ItemCode" name="ItemCode" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="ItemQuantity">Item Quantity:</label>
+            <input type="number" id="ItemQuantity" name="ItemQuantity" class="form-control" 
+                   onchange="calculateTotal()" required />
+        </div>
+        <div class="form-group">
+            <label for="ItemCost">Item Cost:</label>
+            <input type="number" id="ItemCost" name="ItemCost" class="form-control" 
+                   onchange="calculateTotal()" required />
+        </div>
+        <div class="form-group">
+            <label for="TotalCost">Total Cost:</label>
+            <input type="number" id="TotalCost" name="TotalCost" class="form-control" readonly />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <h3>My Purchase Requests</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Request Number</th>
+                <th>Item Code</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model)
+            {
+                <tr>
+                    <td>@request.RequestNumber</td>
+                    <td>@request.ItemCode</td>
+                    <td>@request.ItemQuantity</td>
+                    <td>@request.ItemCost</td>
+                    <td>@request.TotalCost</td>
+                    <td>@request.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
