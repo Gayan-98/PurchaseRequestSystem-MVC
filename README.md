@@ -37,6 +37,6 @@ This is a web application developed using .NET and following the Model-View-Cont
 4. Build the project:
    ```bash
    dotnet build
- 5. Run the application:
+5. Run the application:
    ```bash
    dotnet run
