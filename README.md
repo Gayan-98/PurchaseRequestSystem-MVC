@@ -28,3 +28,24 @@ This is a web application developed using .NET and following the Model-View-Cont
 1. Clone the repository:
    ```bash
    https://github.com/Gayan-98/PurchaseRequestSystem-MVC.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd PurchaseRequestSystem-MVC
+
+3. Restore project dependencies:
+   ```bash
+   dotnet restore
+
+4. Build the project:
+   ```bash
+   dotnet build
+
+
+ 5. Run the application:
+   ```bash
+   dotnet run
+
+
+
+
