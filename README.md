@@ -27,4 +27,4 @@ This is a web application developed using .NET and following the Model-View-Cont
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/PurchaseRequestSystem-MVC.git
+   https://github.com/Gayan-98/PurchaseRequestSystem-MVC.git
